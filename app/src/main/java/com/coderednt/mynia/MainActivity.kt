@@ -11,6 +11,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        DeviceInfo.initialize(applicationContext)
+
+        val deviceInfo = DeviceInfo.getInfo()
+
+        Log.d("MyNIA", "Device Info: $deviceInfo")
 
         repeat(3) {
             GlobalScope.launch {
